@@ -1,0 +1,27 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  echo-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: inputs
+        run: echo "Hello MFS"
+
+      - name: Say hello 👋
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show working directory
+        run: pwd
+
+      - name: List files in repo
+        run: ls -la
